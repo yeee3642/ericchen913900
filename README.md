@@ -29,7 +29,7 @@ tests, proof-carrying audit output.
 
 | Project | What it is |
 |---|---|
-| [arbiter-audit](https://github.com/yeee3642/arbiter-audit) | Proof-carrying smart-contract auditor built for my AIS3 project. Benchmarked head-to-head against the Bastet corpus: **wins on MCC and specificity, loses on F1** — it declines to report what it cannot substantiate, which is the trade I wanted to measure. |
+| arbiter-audit *(private pending disclosure review)* | Proof-carrying smart-contract auditor built for my AIS3 project. Benchmarked head-to-head against the Bastet corpus: **wins on MCC and specificity, loses on F1** — it declines to report what it cannot substantiate, which is the trade I wanted to measure. |
 | [patchagent-blue](https://github.com/yeee3642/patchagent-blue) | Automated patch synthesis gated on three independent checks: SAST clean, unit tests pass, and an **attack-regression test** that replays the original exploit against the patched build. A patch that only silences the scanner does not pass. |
 | [llm-ssrf-defense-lab](https://github.com/yeee3642/llm-ssrf-defense-lab) | SSRF defense evaluation harness: a scenario corpus, a deterministic rule-based defender, and a traditional baseline to score it against. The defender is *not* model-driven — that is stated up front, because a benchmark that flatters its own agent is worth nothing. |
 | [pwnscout](https://github.com/yeee3642/pwnscout) | Offline attack-surface and exploitability scanner. No network calls, no model in the loop — deliberately, so results are reproducible and auditable. |
