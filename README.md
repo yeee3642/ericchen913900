@@ -1,40 +1,69 @@
-<div align="center">
+# Chen Po-Cheng · `yeee3642`
 
-# Eric Chen
+High-school student in Taiwan working on **web security**, currently pushing into
+binary exploitation. CTF player for **Bamboo Fox**. I care most about the step that
+comes after finding a bug: proving it actually holds.
 
-### Security Engineering · CTF · Offensive Research
+Writeups and competition notes → **[yeee3642.github.io](https://yeee3642.github.io/)**
 
-I build practical security tooling and study how real systems fail.
-My work focuses on authorized testing, exploitability analysis, web security,
-Windows internals, and reproducible CTF research.
+---
 
-[![Generate Snake](https://github.com/ericchen913900/ericchen913900/actions/workflows/generate_snake.yml/badge.svg)](https://github.com/ericchen913900/ericchen913900/actions/workflows/generate_snake.yml)
-![Profile views](https://komarev.com/ghpvc/?username=ericchen913900&style=flat-square&color=2ea043)
+## What I work on
 
-</div>
+**Exploitability, not just detectability.** Most of my tooling exists because a
+"finding" and a *demonstrated* finding are different objects. That gap is the
+thread running through everything below — refutation gates, attack-regression
+tests, proof-carrying audit output.
 
-## Security work
+- **Web security** — attack-surface mapping, authorization and business-logic
+  flaws, chaining primitives to code execution
+- **Automated vulnerability triage** — separating real findings from plausible
+  ones, at scale, with the burden of proof on the finding
+- **Program repair and defense evaluation** — does a patch actually close the
+  bug, and does a defense survive an adaptive attacker
+- **Learning:** binary exploitation, Windows internals
 
-- [RoguePlanet](https://github.com/ericchen913900/rogueplanet) — Windows Defender vulnerability research.
-- [WAF DDQN Dashboard](https://github.com/ericchen913900/waf-ddqn-dashboard) — adversarial WAF research and visualization.
-- [Blind XSS Dorker](https://github.com/ericchen913900/blind-xss-dorker) — contact-form discovery for authorized security testing.
-- [DiceWallet CTF](https://github.com/ericchen913900/dicewallet-ctf-exploit) — a reproducible web challenge artifact.
+---
 
-## Current focus
+## Selected work
 
-```text
-attack surface mapping  |  exploit validation  |  web security
-Windows internals       |  security automation |  CTF research
-```
+| Project | What it is |
+|---|---|
+| [arbiter-audit](https://github.com/yeee3642/arbiter-audit) | Proof-carrying smart-contract auditor built for my AIS3 project. Benchmarked head-to-head against the Bastet corpus: **wins on MCC and specificity, loses on F1** — it declines to report what it cannot substantiate, which is the trade I wanted to measure. |
+| [patchagent-blue](https://github.com/yeee3642/patchagent-blue) | Automated patch synthesis gated on three independent checks: SAST clean, unit tests pass, and an **attack-regression test** that replays the original exploit against the patched build. A patch that only silences the scanner does not pass. |
+| [llm-ssrf-defense-lab](https://github.com/yeee3642/llm-ssrf-defense-lab) | Benchmark lab for LLM-driven SSRF defense — training data, evaluation harness, and the adaptive-attacker side, so the defense is scored against something that adapts to it. |
+| [pwnscout](https://github.com/yeee3642/pwnscout) | Offline attack-surface and exploitability scanner. No network calls, no model in the loop — deliberately, so results are reproducible and auditable. |
+| [veto](https://github.com/yeee3642/veto) | Refutation-first triage pipeline. Candidate findings run a ladder of scope / prior-art / citation / reproducibility gates against a **negative corpus**; the default verdict is "not proven". Built after enough false positives to take the problem seriously. |
+| [redkit](https://github.com/yeee3642/redkit) | Portable offline red-team CLI for authorized engagements and CTF — stdlib only, no cloud dependency. |
+| [edu-recon](https://github.com/yeee3642/edu-recon) | Recon and triage orchestrator for **authorized** education-sector assessment, with a web control panel. |
+| [THJCC-challenge](https://github.com/yeee3642/THJCC-challenge) | Cryptography challenges I authored (3 medium, 3 hard) with reference solutions and writeups. |
 
-<div align="center">
+---
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ericchen913900/ericchen913900/output/github-contribution-grid-snake-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ericchen913900/ericchen913900/output/github-contribution-grid-snake.svg">
-  <img alt="GitHub contribution graph" src="https://raw.githubusercontent.com/ericchen913900/ericchen913900/output/github-contribution-grid-snake.svg">
-</picture>
+## Competition record
 
-![GitHub stats](https://github-readme-stats.vercel.app/api?username=ericchen913900&show_icons=true&theme=github_dark&hide_border=true)
+| Date | Event | Result | Team |
+|---|---|---|---|
+| 2026 | picoCTF | 90 / 8747 | solo |
+| 2026 | FhCTF | **Rank 1** | McDonalds |
+| 2026 | UTCTF | 72nd, all clear | TakeKitsune |
+| 2026 | AIS3 EOF Preliminary | **Rank 3** | 24 Albert55688 |
+| 2026 | AIS3 EOF Finals | Green Butter KuaiKuai Award | 24 Albert55688 |
+| 2025-10 | HITCON Final CTF 2025 | **1 / 6** | Bamboo Fox |
+| 2025-09 | is1ab::CTF | 27 / 70 | solo |
+| 2025-08 | HITCON CTF 2025 | 13 / 717 | Bamboo Fox |
+| 2025-08 | Sekai CTF 2025 | 80 / 1054 | Bamboo Fox |
 
-</div>
+**Community:** DEVCORE Conference 2026 · SITCON 2026 · SITCON 2025 · HITCON 2025 ·
+HITCON Cyber Range x CTF 2025 · Presidential Hackathon
+
+---
+
+## Disclosure and scope
+
+Everything published here is CTF work, authorized assessment, or defensive
+research. Vulnerability findings in third-party software are reported to the
+vendor or program first and are not published here while a report is open —
+which is why some of my security work is not in this list.
+
+Contact links are on [my site](https://yeee3642.github.io/about/).
